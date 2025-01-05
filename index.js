@@ -1,9 +1,13 @@
+let display = document.querySelector(".main_text");
 let currentElement = "";
 
+let displayText = "";
 let mathElements = {
     firstNum: "",
     secondNum: "",
+    previusSecondNum: "",
     operator: "",
+    previusOperator: ""
 }
 
 function operation(firstNum, secondNum, operator) {
@@ -17,6 +21,12 @@ function operation(firstNum, secondNum, operator) {
     }
     else if (operator === "*") {
         return firstNum * secondNum;
+    }
+    else if (operator === "%") {
+        return firstNum * (secondNum / 100);
+    }
+    else if (operator === "^") {
+        return firstNum ** secondNum;
     }
     else {
         return firstNum / secondNum;
@@ -59,10 +69,22 @@ buttons.forEach(button => {
             }
         }
         else if (button.classList.contains("result")) {
-            result = operation(mathElements.firstNum, mathElements.secondNum, mathElements.operator);
-            mathElements.firstNum = `${result}`;
-            mathElements.secondNum = "";
-            mathElements.operator = ""
+            let result;
+            if (mathElements.firstNum && mathElements.secondNum && mathElements.operator) {
+                result = operation(mathElements.firstNum, mathElements.secondNum, mathElements.operator);
+                mathElements.firstNum = `${result}`;
+                mathElements.previusSecondNum = mathElements.secondNum;
+                mathElements.secondNum = "";
+                mathElements.previusOperator = mathElements.operator
+                mathElements.operator = "";
+
+            }
+            else {
+                console.log(mathElements.previusSecondNum);
+                console.log(mathElements.previusOperator);
+                result = operation(mathElements.firstNum, mathElements.previusSecondNum, mathElements.previusOperator);
+                mathElements.firstNum = `${result}`;
+            }
             console.log(result);
         }
         else if (button.classList.contains("backspace")) {
@@ -79,3 +101,5 @@ buttons.forEach(button => {
     })
 
 });
+
+

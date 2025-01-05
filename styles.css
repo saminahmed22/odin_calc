@@ -3,24 +3,37 @@
     src: url(fonts/digital-7.ttf);
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .calculator {
     border: 2px solid black;
     border-radius: 10px;
-    height: 400px;
+    height: 380px;
     width: 350px;
-    background-color: rgb(16, 13, 29);
+    background-color: rgb(4, 0, 20);
 }
 
 .display {
-    border: 1px solid black;
+    border: 2px solid black;
     height: 80px;
-    width: 300px;
-    margin: 20px 25px 15px 25px;
+    width: 310px;
+    margin: 20px 5px 15px 5px;
+    padding: 0 10px 0 10px;
     background-color: rgb(54, 54, 2);
     display: flex;
     justify-content: center;
     font-family: digital;
-    font-size: 70px;
+    font-size: 80px;
     /* position: relative; */
 }
 
@@ -33,12 +46,51 @@
     z-index: 2;
 }
 
+
 .placeholder {
     opacity: 0.3;
     z-index: 1;
-} */
+}
+*/
 
 .buttons {
+    margin: 50px 0 20px 0;
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+    margin: 0px 15px 15px 15px;
     display: flex;
-    justify-content: center;
+    gap: 7px;
+    justify-content: space-around;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    font-size: 24px;
+    flex: 1;
+}
+
+button:active {
+    background-color: rgb(77, 176, 209);
+}
+
+.clear {
+    background-color: rgb(239, 95, 124);
+}
+
+.clear:active {
+    background-color: crimson;
+}
+
+.operator {
+    background-color: lightblue;
+}
+
+.result {
+    background-color: rgb(70, 196, 238);
 }

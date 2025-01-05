@@ -1,0 +1,44 @@
+@font-face {
+    font-family: digital;
+    src: url(fonts/digital-7.ttf);
+}
+
+.calculator {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 400px;
+    width: 350px;
+    background-color: rgb(16, 13, 29);
+}
+
+.display {
+    border: 1px solid black;
+    height: 80px;
+    width: 300px;
+    margin: 20px 25px 15px 25px;
+    background-color: rgb(54, 54, 2);
+    display: flex;
+    justify-content: center;
+    font-family: digital;
+    font-size: 70px;
+    /* position: relative; */
+}
+
+.display_texts {
+    /* position: absolute; */
+    padding: 10px 5px 10px 5px;
+}
+
+/* .main_text {
+    z-index: 2;
+}
+
+.placeholder {
+    opacity: 0.3;
+    z-index: 1;
+} */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}

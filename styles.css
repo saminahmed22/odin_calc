@@ -101,7 +101,7 @@ button {
 }
 
 button:active {
-    background-color: rgb(77, 176, 209);
+    background-color: rgb(84, 178, 255);
 }
 
 .clear {
@@ -118,4 +118,8 @@ button:active {
 
 .result {
     background-color: rgb(70, 196, 238);
+}
+
+.result:active {
+    background-color: rgb(26, 69, 187);
 }

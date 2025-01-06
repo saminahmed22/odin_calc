@@ -17,7 +17,8 @@ let mathElements = {
     previusSecondNum: "",
     operator: "",
     previusOperator: "",
-    result: ""
+    result: "",
+    previusElement: ""
 }
 
 function operation(firstNum, secondNum, operator) {
@@ -48,11 +49,21 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         if (button.classList.contains("number")) {
+            if (button.id === ".") {
+                if (mathElements.operator === "" && mathElements.firstNum.includes(".")) {
+                    return;
+                }
+                if (mathElements.operator !== "" && mathElements.secondNum.includes(".")) {
+                    return;
+                }
+            }
+
             if (mathElements.operator === "") {
                 mathElements.firstNum += button.id;
                 console.log(`firstNum = ${mathElements.firstNum}`);
                 displayText += button.id;
                 display.textContent = displayText;
+                mathElements.previusElement = currentElement;
                 currentElement = "firstNum";
             }
             else {
@@ -60,6 +71,7 @@ buttons.forEach(button => {
                 console.log(`secondNum = ${mathElements.secondNum}`);
                 displayText += button.id;
                 display.textContent = displayText;
+                mathElements.previusElement = currentElement;
                 currentElement = "secondNum";
             }
         }
@@ -71,6 +83,7 @@ buttons.forEach(button => {
                 displayOperator.textContent = currentOperator;
                 displayText = "";
                 display.textContent = displayText;
+                mathElements.previusElement = currentElement;
                 currentElement = "operator";
             }
             else if (mathElements.operator && mathElements.secondNum && currentElement != "operator") {
@@ -83,13 +96,14 @@ buttons.forEach(button => {
                 displayText = "";
                 display.textContent = displayText;
                 mathElements.operator = button.id;
+                mathElements.previusElement = currentElement;
                 currentElement = "operator";
                 console.log(`operator = ${mathElements.operator}`);
                 currentOperator = button.id;
                 displayOperator.textContent = currentOperator;
             }
             else {
-                console.log("Add number first")
+                console.log("Add number first");
             }
         }
         else if (button.classList.contains("result")) {
@@ -110,15 +124,32 @@ buttons.forEach(button => {
                 result = operation(mathElements.firstNum, mathElements.previusSecondNum, mathElements.previusOperator);
                 mathElements.firstNum = `${result}`;
             }
+            mathElements.previusElement = currentElement;
+            currentElement = "result";
             currentResult = result;
             displayResult.textContent = currentResult;
             console.log(result);
         }
         else if (button.classList.contains("backspace")) {
-            if (currentElement === "operator") {
-                currentOperator = currentOperator.slice(0, -1);
-                displayOperator.textContent = currentOperator;
+            if (currentElement === "result") {
+                displayText = mathElements[currentElement];;
+                display.textContent = displayText;
+
                 mathElements[currentElement] = mathElements[currentElement].slice(0, -1);
+                currentElement = `${mathElements.previusElement}`;
+                console.log(currentElement)
+                displayText = mathElements[currentElement];
+                display.textContent = displayText;
+            }
+            else if (currentElement === "operator") {
+                currentOperator = "";
+                displayOperator.textContent = currentOperator;
+
+                mathElements[currentElement] = mathElements[currentElement].slice(0, -1);
+                currentElement = `${mathElements.previusElement}`;
+                console.log(currentElement)
+                displayText = mathElements[currentElement];
+                display.textContent = displayText;
             }
             else {
                 console.log(`Current element value = ${mathElements[currentElement]}`);
@@ -126,6 +157,7 @@ buttons.forEach(button => {
                 displayText = displayText.slice(0, -1);
                 console.log(`Current element updated value = ${mathElements[currentElement]}`);
                 display.textContent = displayText;
+                currentElement = `${mathElements.previusElement}`;
             }
 
         }
@@ -144,5 +176,3 @@ buttons.forEach(button => {
     })
 
 });
-
-

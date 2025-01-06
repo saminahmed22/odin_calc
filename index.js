@@ -3,7 +3,7 @@ let displayOperator = document.querySelector(".operatorDisplay");
 let displayResult = document.querySelector(".dispalyResult");
 let currentResult = "";
 let currentElement = "";
-
+// ◀︎ ▶︎
 
 let currentOperator = "";
 displayOperator.textContent = currentOperator;

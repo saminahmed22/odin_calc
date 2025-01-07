@@ -26,60 +26,164 @@ body {
 
 .display {
     border: 2px solid black;
+    display: block;
     height: 80px;
     width: 310px;
-    margin: 20px 5px 15px 5px;
-    padding: 0 10px 0 10px;
+    margin: 20px 7px 15px 14px;
     background-color: rgb(54, 54, 2);
-    display: block;
     font-family: digital;
-    font-size: 45px;
-    /* position: relative; */
 }
 
-.display_texts {
+.operatorDiv {
     display: flex;
-    justify-content: flex-end;
-    height: 40px;
+    justify-content: flex-start;
+    height: 20px;
     width: 310px;
-    padding-top: 1px;
-    overflow-x: hidden;
+    position: relative;
+    font-size: 30px;
+}
+
+
+.operatorDisplay,
+.operatorPlaceholder {
+    left: 10px;
+    position: absolute;
 }
 
 .operatorDisplay {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: digital;
-    font-size: 40px;
+    z-index: 1;
 }
 
-.dispalyResult {
+.operatorPlaceholder {
+    opacity: .3;
+}
+
+.mainTextDiv {
+    margin-top: 2px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 36px;
+    width: 310px;
+    overflow-x: hidden;
+    font-size: 38px;
+}
+
+.mainText,
+.mainTextPlaceholder {
+    position: absolute;
+}
+
+.mainText {
+    z-index: 1;
+}
+
+.mainTextPlaceholder {
+    opacity: .3;
+}
+
+.resultDiv {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     height: 20px;
-    width: 310px;
-    padding-top: 0px;
-    /* background-color: yellowgreen; */
+    width: 265px;
     font-size: 20px;
+    float: right;
+    border-left: 1px solid black;
 }
 
-/* .main_text {
-    z-index: 2;
-
+.resultText,
+.resultTextPlaceholder {
+    position: absolute;
+    padding: 0 4px 0 0;
 }
 
-
-.placeholder {
-    opacity: 0.3;
+.resultText {
     z-index: 1;
 }
-*/
+
+.resultTextPlaceholder {
+    opacity: .3;
+}
+
+.overflow {
+    display: flex;
+    height: 20px;
+    width: 40px;
+    padding-left: 4px;
+}
+
+.overflowLeft {
+    position: relative;
+    display: flex;
+    height: 20px;
+    width: 20px;
+}
+
+.overflowLeftMain,
+.overflowLeftPH {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+}
+
+.overflowLeftMain {
+    opacity: .8;
+    z-index: 1;
+}
+
+.overflowLeftPH {
+    opacity: .3;
+}
+
+.overflowRight {
+    position: relative;
+    display: flex;
+    height: 20px;
+    width: 20px;
+}
+
+.overflowRightMain,
+.overflowRightPH {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+}
+
+.overflowRightMain {
+    opacity: .8;
+    z-index: 1;
+}
+
+.overflowRightPH {
+    opacity: .3;
+}
+
+.controlbuttons {
+    height: 30px;
+    width: 310px;
+    padding: 0 0 0 25px;
+}
+
+.overflowLeftBtn {
+    font-size: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: white;
+    background-color: rgba(32, 25, 56, 0.775);
+}
+
+.overflowRightBtn {
+    font-size: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: white;
+    background-color: rgba(32, 25, 56, 0.775);
+}
 
 .buttons {
-    margin: 50px 0 20px 0;
+    margin: 5px 0 20px 0;
 }
 
 .row1,

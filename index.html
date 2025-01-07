@@ -12,10 +12,33 @@
 <body>
     <div class="calculator">
         <div class="display">
-            <div class="operatorDisplay"></div>
-            <div class="main_text display_texts"></div>
-            <!-- <div class="placeholder display_texts">888888888</div> -->
-            <div class="dispalyResult"></div>
+            <div class="operatorDiv">
+                <div class="operatorDisplay"></div>
+                <div class="operatorPlaceholder">+</div>
+            </div>
+            <div class="mainTextDiv">
+                <div class="mainText"></div>
+                <div class="mainTextPlaceholder">88888888888888888</div>
+            </div>
+            <div class="resultDiv">
+                <div class="resultText"></div>
+                <div class="resultTextPlaceholder">888888888888888888888888888</div>
+            </div>
+            <!-- ◀︎ ▶︎ -->
+            <div class="overflow">
+                <div class="overflowLeft">
+                    <div class="overflowLeftMain">◀︎</div>
+                    <div class="overflowLeftPH">◀︎</div>
+                </div>
+                <div class="overflowRight">
+                    <div class="overflowRightMain">▶︎</div>
+                    <div class="overflowRightPH">▶︎</div>
+                </div>
+            </div>
+        </div>
+        <div class="controlbuttons">
+            <button class="overflowLeftBtn">◀︎</button>
+            <button class="overflowRightBtn">▶</button>
         </div>
         <div class="buttons">
             <div class="buttons">

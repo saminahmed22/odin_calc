@@ -1,9 +1,9 @@
-let display = document.querySelector(".main_text");
+let display = document.querySelector(".mainText");
 let displayOperator = document.querySelector(".operatorDisplay");
-let displayResult = document.querySelector(".dispalyResult");
+let displayResult = document.querySelector(".resultText");
 let currentResult = "";
 let currentElement = "";
-// ◀︎ ▶︎
+
 
 let currentOperator = "";
 displayOperator.textContent = currentOperator;

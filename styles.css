@@ -3,6 +3,10 @@
     src: url(fonts/digital-7.ttf);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html,
 body {
     height: 100%;

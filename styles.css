@@ -83,7 +83,7 @@ body {
 }
 
 .mainTextPlaceholder {
-    opacity: .3;
+    opacity: .2;
 }
 
 .resultDiv {
@@ -94,7 +94,7 @@ body {
     width: 265px;
     font-size: 20px;
     float: right;
-    border-left: 1px solid black;
+
 }
 
 .resultText,
@@ -108,91 +108,11 @@ body {
 }
 
 .resultTextPlaceholder {
-    opacity: .3;
-}
-
-.overflow {
-    display: flex;
-    height: 20px;
-    width: 40px;
-    padding-left: 4px;
-}
-
-.overflowLeft {
-    position: relative;
-    display: flex;
-    height: 20px;
-    width: 20px;
-}
-
-.overflowLeftMain,
-.overflowLeftPH {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-}
-
-.overflowLeftMain {
-    opacity: .8;
-    z-index: 1;
-}
-
-.overflowLeftPH {
-    opacity: .3;
-}
-
-.overflowRight {
-    position: relative;
-    display: flex;
-    height: 20px;
-    width: 20px;
-}
-
-.overflowRightMain,
-.overflowRightPH {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-}
-
-.overflowRightMain {
-    opacity: .8;
-    z-index: 1;
-}
-
-.overflowRightPH {
-    opacity: .3;
-}
-
-.controlbuttons {
-    height: 30px;
-    width: 310px;
-    padding: 0 0 0 25px;
-}
-
-.overflowLeftBtn {
-    font-size: 15px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    color: white;
-    background-color: rgba(32, 25, 56, 0.775);
-}
-
-.overflowRightBtn {
-    font-size: 15px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    color: white;
-    background-color: rgba(32, 25, 56, 0.775);
-}
-
-.overflowLeftBtn:active,
-.overflowRightBtn:active {
-    background-color: rgba(84, 67, 141, 0.73);
+    opacity: .2;
 }
 
 .buttons {
-    margin: 5px 0 20px 0;
+    margin: 40px 0 20px 0;
 }
 
 .row1,

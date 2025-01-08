@@ -24,31 +24,36 @@ let mathElements = {
 function operation(firstNum, secondNum, operator) {
     firstNum = Number(firstNum);
     secondNum = Number(secondNum);
+    let giveResult;
+    let maxLength = 32;
     if (operator === "+") {
-        return firstNum + secondNum;
+        giveResult = firstNum + secondNum;
     }
     else if (operator === "-") {
-        return firstNum - secondNum;
+        giveResult = firstNum - secondNum;
     }
     else if (operator === "*") {
-        return firstNum * secondNum;
+        giveResult = firstNum * secondNum;
     }
     else if (operator === "%") {
-        return firstNum * (secondNum / 100);
+        giveResult = firstNum * (secondNum / 100);
     }
     else if (operator === "^") {
-        return firstNum ** secondNum;
+        giveResult = firstNum ** secondNum;
+    }
+    else if (operator === "/") {
+        giveResult = firstNum / secondNum;
     }
     else {
-        return firstNum / secondNum;
+        giveResult = displayText;
     }
+    return String(giveResult).slice(0, maxLength);
 }
 
 const buttons = document.querySelectorAll("button");
-
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        if (button.classList.contains("number")) {
+        if (button.classList.contains("number") && displayText.length <= 16) {
             if (button.id === ".") {
                 if (mathElements.operator === "" && mathElements.firstNum.includes(".")) {
                     return;
@@ -174,5 +179,16 @@ buttons.forEach(button => {
             displayResult.textContent = currentResult;
         }
     })
-
 });
+
+// buttons.forEach(button => {
+
+// })
+// document.addEventListener("keydown", (ev) => {
+//     mathElements.firstNum += ev.key;
+//     console.log(`firstNum = ${mathElements.firstNum}`);
+//     displayText += ev.key;
+//     display.textContent = displayText;
+//     mathElements.previusElement = currentElement;
+//     currentElement = "firstNum";
+// })

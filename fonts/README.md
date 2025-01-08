@@ -1,2 +1,0 @@
-About the font(Digital-7),
-The '1', '.' in the original Digital-7 font had very little space on it sides which were ruining the LED effect or visualization I was trying to create. Also the '%' and '/' was too big. So I edited or manipulated them using font forge. I know it's unethical and not legal but I was curious if it was possible in the first place or not. I tried to do it with html, css and JS but I wasn't able to achieve that. I humbly apologize for it. If you're the owner please contact me at saminahmed000@gmail.com and I'll remove it asap.
